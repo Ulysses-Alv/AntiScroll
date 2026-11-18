@@ -1,0 +1,5 @@
+[data-antiscroll-hidden] { display: none !important; }
+html[data-antiscroll-locked], html[data-antiscroll-locked] body {
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: none !important;
+}

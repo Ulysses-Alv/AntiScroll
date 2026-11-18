@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AntiScroll</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><span class="brand-icon" aria-hidden="true">↟</span><span class="brand">AntiScroll</span><span class="version">BETA 0.1</span></header>
+  <main>
+    <p class="eyebrow">BROWSE WITH INTENTION</p>
+    <h1>You decide.<br><span>Not the feed.</span></h1>
+    <p class="intro">Stories, messages, and what you came to find.<br>Leave the endless scroll behind.</p>
+    <section class="timer" aria-label="Daily scroll pass">
+      <div class="timer-heading"><span class="dot" aria-hidden="true"></span><span id="statusLabel">Loading…</span><span class="pill">SHARED PASS</span></div>
+      <div id="countdown" class="countdown" aria-label="Time remaining">--:--</div>
+      <p id="timerHelp">One 15-minute pass every 24 hours.</p>
+      <button id="start" class="primary" type="button" aria-haspopup="dialog" disabled>Use my 15 minutes <span aria-hidden="true">↗</span></button>
+      <button id="stop" class="secondary" type="button" hidden>End the pass and block scrolling</button>
+    </section>
+    <section class="preferences" aria-labelledby="prefsTitle">
+      <h2 id="prefsTitle">YOUR LIMITS</h2>
+      <label class="setting"><span><b>Instagram</b><small>Block scrolling on feeds and profiles. Hide Reels.</small></span><input id="instagram" type="checkbox" role="switch" checked disabled></label>
+      <label class="setting"><span><b>X / Twitter</b><small>Block timeline scrolling and the video section.</small></span><input id="x" type="checkbox" role="switch" checked disabled></label>
+      <label class="setting"><span><b>Allow scrolling in search results</b><small>Does not unlock Explore or profiles.</small></span><input id="allowSearchScroll" type="checkbox" role="switch" disabled></label>
+    </section>
+    <p class="note">Stories and messages stay available. Reels and immersive videos stay blocked during a pass on protected networks.</p>
+    <p id="feedback" role="status"></p>
+  </main>
+  <footer><span class="dot" aria-hidden="true"></span> Everything stays in your browser. No accounts or tracking.</footer>
+  <dialog id="confirmPass" aria-labelledby="confirmTitle" aria-describedby="confirmHelp">
+    <h2 id="confirmTitle">Are you sure you want to use your 15 minutes for today?</h2>
+    <p id="confirmHelp">The clock starts as soon as you confirm. Your next pass unlocks in 24 hours, even if you end this one early.</p>
+    <form method="dialog" class="confirmation-actions">
+      <button class="secondary" type="submit" autofocus>Not now</button>
+      <button id="confirmStart" class="primary" type="button">Yes, start the pass</button>
+    </form>
+  </dialog>
+  <script src="policy.js"></script><script src="popup.js"></script>
+</body>
+</html>
